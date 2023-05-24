@@ -1,0 +1,74 @@
+<h2>Lista de Artistas</h2>
+<table class="table table-striped">
+    <thead class="thead bg-primary text-white">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Popularidad</th>
+        </tr>
+
+    </thead>
+<tbody>
+    <tr *ngFor="let artist of artistList">
+        <td>{{artist.id}}</td>
+        <td>{{artist.nameArtist}}</td>
+        <td>{{artist.age}}</td>
+        <td>{{artist.popularity}}</td>
+        <td><button class="btn btn-primary btn-sm" (click)="view(ver,artist)">Ver</button></td>
+        <td><button class="btn btn-danger btn-sm" (click)="delete(artist.id)">Borrar</button></td>
+
+    </tr>
+</tbody>
+</table>
+
+<h2>Agregar Artista: </h2>
+<tfoot>
+    <form [formGroup] = "artistForm">
+    <tr>
+       <td>Ingresar un ID: <input formControlName = "id" placeholder="ID"></td>
+       <p *ngIf="id.errors && id.errors['required']">Obligatorio</p>
+       <td>Ingresar un Nombre: <input formControlName = "nameArtist" placeholder="Name"> </td>
+       <td>Ingresar la edad: <input formControlName = "age" placeholder="AGE"> </td>
+       <td>Ingresar popularidad: <input formControlName = "popularity" placeholder="POPULARIDAD"></td>
+       <button (click)='add()'>ADD</button>
+
+      <!--
+       <td>Ingresar Nombre del artista: <input [(ngModel)]= "inputName" placeholder="NAME" name="InputName"></td>
+       <td>Ingresar Edad del Artista: <input [(ngModel)] ="inputEdad" placeholder= "AGE" name="inputEdad"></td>
+       <td>Ingresar Popularidad: <input [(ngModel)]= "inputPopul" placeholder="POPULARITY" name="inputPopularidad"></td>
+       <td><button (click)='add()'>ADD</button></td>
+       -->
+    </tr>
+</form>
+    
+</tfoot>
+
+<ng-template #ver let-modal>
+    <div class="modal-header">
+        <h5 class="modal-title"> Ver Artista</h5>
+        <button (click)="modal.dismiss()">X</button>
+
+    </div>
+    <div class="modal-body">
+        <label>Id: </label>
+        <input class= "form-control" [(ngModel)]="inputIDV" readonly>
+        <label>Nombre Artista: </label>
+        <input class="form-control" [(ngModel)]="inputNameV">
+        <label>Edad: </label>
+        <input class="form-control" [(ngModel)] ="inputEdadV">
+        <label>Popularidad: </label>
+        <input class="form-control" [(ngModel)] = "inputPopulV">
+
+
+    </div>
+    <div class="modal.footer">
+        <button class="btn btn-primary" (click)="modal.close()"> Guardar</button>
+
+    </div>
+
+
+
+
+</ng-template>
+
