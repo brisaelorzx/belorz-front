@@ -63,7 +63,7 @@ export class ArtistListComponent implements OnInit{
     
   }
   get id() {return this.artistForm.get('id')}
-  get nameArtist() {return this.artistForm.get('name')}
+  get nameArtist() {return this.artistForm.get('nameArtist')}
   get age() {return this.artistForm.get('age')}
   get popularity(){return this.artistForm.get('popularity')}
   get albums(){return this.artistForm.get('albums')}
