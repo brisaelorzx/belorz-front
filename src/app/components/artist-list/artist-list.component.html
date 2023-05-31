@@ -6,7 +6,7 @@
             <th scope="col">Nombre</th>
             <th scope="col">Edad</th>
             <th scope="col">Popularidad</th>
-            <th scope="col">Ver/Editar</th>
+            <th scope="col">Modificar artista</th>
             <th scope="col">Borrar</th>
 
         </tr>
@@ -57,7 +57,7 @@
 
 <ng-template #ver let-modal>
     <div class="modal-header">
-        <h5 class="modal-title"> Ver Artista</h5>
+        <h5 class="modal-title" style="">Modificar Artista</h5>
         <button (click)="modal.dismiss()">X</button>
 
     </div>
@@ -73,9 +73,8 @@
 
 
     </div>
-    <div class="modal.footer">
+    <div class="modal-footer">
         <button class="btn btn-primary" (click)="modal.close()"> Guardar</button>
-
     </div>
 </ng-template>
 

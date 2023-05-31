@@ -6,12 +6,4 @@ export class Artist {
         age: number
         popularity: number
         albums: Array<Album>
-
-
-
-        
-
-
-
-
 }

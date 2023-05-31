@@ -52,7 +52,6 @@ export class ArtistListComponent implements OnInit{
 
 
     this.artistService.getAll().subscribe(artistResponse => {
-      alert("Okay");
       this.artistList=artistResponse 
       console.log(this.artistList)
 
