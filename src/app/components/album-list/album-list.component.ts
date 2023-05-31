@@ -50,7 +50,7 @@ export class AlbumListComponent implements OnInit{
 
     this.artistService.getAll().subscribe(artistResponse => {
       this.artistList= artistResponse
-      //console.log(artistResponse)
+      console.log(artistResponse)
 
     }, error => {
       console.error(error)
@@ -67,7 +67,7 @@ export class AlbumListComponent implements OnInit{
 
     this.albumService.getAll().subscribe(albumResponse => {
       this.albumList= albumResponse
-      //console.log(albumResponse)
+      console.log(albumResponse)
 
     }, error => {
           console.error(error)
@@ -121,6 +121,39 @@ delete(id: number) {
   })
 
   
+}
+
+view (ver: any, a: Album){
+  this.InputIDV= a.id
+  this.InputAlbumNameV= a.albumName
+  this.InputTotalTracksV= a.totalTracks
+  this.InputReleaseYearV= a.releaseYear
+  this.InputPopularityV= a.popularity
+  this.InputGenres= a.genres
+  this.InputArtistV= a.artist
+  this.modalService.open(ver).result.then(() => {
+    let album = new Album()
+    album.id= this.InputIDV
+    album.albumName=this.InputAlbumNameV
+    album.totalTracks=this.InputTotalTracksV
+    album.releaseYear=this.InputReleaseYearV
+    album.popularity=this.InputPopularityV
+    album.genres=this.InputGenres
+    album.artist=this.InputArtistV
+    alert(this.InputIDV)
+    this.albumService.edit(this.InputIDV,album).subscribe( () => {
+      location.reload()
+    }, error => {
+      console.error(error)
+      alert('Error' + error.error.message)
+}
+
+)
+  }
+
+
+  )
+
 }
 
 
