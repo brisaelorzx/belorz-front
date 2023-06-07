@@ -66,13 +66,13 @@
 
 
     </div>
-    <div class="modal-footer">
-        <button class="btn btn-primary" (click)="modal.close()" style="align-items: center;"> Guardar</button>
+    <div class="modal-footer" style="background-color:  rgb(188, 150, 224);">
+        <button class="btn btn-light" (click)="modal.close()" style="align-items: center; margin-right: 40%;"> Guardar</button>
     </div>
 </ng-template>
 
 <!--Agregar Album-->
-<div class="card" style="background-color:  rgb(188, 150, 224); padding: 20px; border-radius: 12px;">
+<div class="card m-4" style="background-color:  rgb(188, 150, 224); padding: 20px; border-radius: 12px;">
     <h3 style="color: rgb(91, 58, 122);">Agregar Album:</h3>
     <br>
     <form [formGroup]="albumForm">
