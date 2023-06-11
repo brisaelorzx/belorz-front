@@ -60,7 +60,7 @@
         <input class="form-control" [(ngModel)] = "InputGenres"> <br>
         <label>Artista:</label>
         <br>
-        <select name="artist" formControlName="artist">
+        <select [(ngModel)]="InputArtistV">
             <option *ngFor="let artist of artistList" [ngValue]="artist">{{artist.nameArtist}}</option>
         </select>
 
