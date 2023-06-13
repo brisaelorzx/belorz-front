@@ -25,6 +25,7 @@ export class AlbumListComponent implements OnInit{
       public InputReleaseYearV: number
       public InputPopularityV: number
       public InputGenres: string
+      public InputArtistName: string
       public InputArtistV: Artist
 
 
@@ -130,6 +131,7 @@ view (ver: any, a: Album){
   this.InputReleaseYearV= a.releaseYear
   this.InputPopularityV= a.popularity
   this.InputGenres= a.genres
+  this.InputArtistName=a.artist.nameArtist
   this.InputArtistV= a.artist
   this.modalService.open(ver).result.then(() => {
     let album = new Album()

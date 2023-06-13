@@ -58,12 +58,21 @@
         <input class="form-control" [(ngModel)] = "InputPopularityV"> <br>
         <label>Género: </label>
         <input class="form-control" [(ngModel)] = "InputGenres"> <br>
-        <label>Artista:</label>
-        <br>
-        <select [(ngModel)]="InputArtistV">
-            <option *ngFor="let artist of artistList" [ngValue]="artist">{{artist.nameArtist}}</option>
-        </select>
-
+        
+        <div class="row g-1">
+            <div class="col">
+                <label>Artista:</label>
+                <input class= "form-control" [(ngModel)]="InputArtistName" readonly>
+            </div>
+            <div class="col">
+                <label>Cambiar Artista:</label>
+                <select class="form-select" [(ngModel)]="InputArtistV">
+                    <option *ngFor="let artist of artistList" [ngValue]="artist">{{artist.nameArtist}}</option>
+                </select>
+            </div>
+        </div>
+        
+        
 
     </div>
     <div class="modal-footer" style="background-color:  rgb(188, 150, 224);">
@@ -79,31 +88,31 @@
         <tfoot>
             <tr>
                 <td>
-                    <input formControlName="id" placeholder="ID">
+                    <input class="form-control" formControlName="id" placeholder="ID">
                     <p *ngIf="id.touched && id.errors && id.errors['required']">Obligatorio</p>
                 </td>
                 <td>
-                    <input formControlName="albumName" placeholder="NAME">
+                    <input class="form-control" formControlName="albumName" placeholder="NAME">
                     <p *ngIf="albumName.touched && albumName.errors && albumName.errors['required']">Obligatorio</p>
                 </td>
                 <td>
-                    <input formControlName="totalTracks" placeholder="TOTAL TRACKS">
+                    <input class="form-control" formControlName="totalTracks" placeholder="TOTAL TRACKS">
                     <p *ngIf="totalTracks.touched && totalTracks.errors && totalTracks.errors['required']">Obligatorio</p>
                 </td>
                 <td>
-                    <input formControlName="releaseYear" placeholder="RELEASE YEAR">
+                    <input class="form-control" formControlName="releaseYear" placeholder="RELEASE YEAR">
                     <p *ngIf="releaseYear.touched && releaseYear.errors && releaseYear.errors['required']">Obligatorio</p>
                 </td>
                 <td>
-                    <input formControlName="popularity" placeholder="POPULARITY">
+                    <input class="form-control" formControlName="popularity" placeholder="POPULARITY">
                     <p *ngIf="popularity.touched && popularity && popularity.errors['required']">Obligatorio</p>
                 </td>
                 <td>
-                    <input formControlName="genres" placeholder="GENRES">
+                    <input class="form-control" formControlName="genres" placeholder="GENRES">
                     <p *ngIf="genres.touched && genres && genres.errors['required']">Obligatorio</p>
                 </td>
                 <td>
-                    <select name="artist" formControlName="artist">
+                    <select class="form-select" name="artist" formControlName="artist">
                         <option *ngFor="let artist of artistList" [ngValue]="artist">{{artist.nameArtist}}</option>
                     </select>
                 </td>
